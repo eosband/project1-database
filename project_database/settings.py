@@ -80,8 +80,8 @@ DATABASES = { # from https://www.digitalocean.com/community/tutorials/how-to-use
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'project_database',
-        'USER': 'adminEric',
-        'PASSWORD': 'password',
+        'USER': 'adminkd',
+        'PASSWORD': 'proj1',
         'HOST': 'localhost',
         'PORT': '',
     }
