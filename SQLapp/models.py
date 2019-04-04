@@ -25,14 +25,14 @@ class Location(models.Model):
     longitude = models.DecimalField(max_digits=18, decimal_places=10, null=True, editable=False)
 
     def __str__(self):
-        return "id: " + str(self.userID)
+        return "title: " + str(self.place_title) + " (id:" + str(self.userID) + ")"
 
-    def save(self):
+    def save(self, *args, **kwargs):
+        # args and kwargs had to be added to fix "force_insert" error when POSTing
         location = "%s, %s, %s %s" % (self.address, self.city, self.state, self.zip_code)
-        if not self.latitude or not self.longitude:
-            self.latitude, self.longitude = self.geocode(location)
-            print(self.latitude)
-            print(self.longitude)
+        # if (not self.latitude or not self.longitude)
+        # the above is commented out for testing purposes
+        self.latitude, self.longitude = self.geocode(location)
         super(Location, self).save()
 
     def geocode(self, location):
