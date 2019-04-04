@@ -11,6 +11,7 @@ from SQLapp.models import *
 
 class userInfo(View):
 
+    # handles only GET requests
     def aoi(request, user_id):
         return JsonResponse(userInfo.getAllLocations(request,user_id))
 
@@ -33,6 +34,8 @@ class userInfo(View):
 
         return data # returns a dictionary so it can be used multiple times
 
+
+    # handles only GET and POST requests
     def users(request):
         # request.method code from https://docs.djangoproject.com/en/2.2/topics/db/queries/
         if request.method == "GET":
@@ -61,6 +64,7 @@ class userInfo(View):
     def modifyLocation(request, user_id, placeTitle):
         return userInfo.modify(request, Location.objects.get(userID=user_id, place_title = placeTitle))
 
+    # handles only PATCH and DELETE requests
     def modify(request, obj):
         if request.method == "PATCH":
             data = QueryDict(request.META["QUERY_STRING"]).dict()
@@ -76,6 +80,7 @@ class userInfo(View):
             response = {"Message":"WRONG REQUEST (400)"}
         return JsonResponse(response)
 
+    # handles only GET and POST requests
     def locations(request):
         # this method follows the structure of users() above
         if request.method == "GET":
