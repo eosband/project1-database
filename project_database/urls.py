@@ -17,7 +17,7 @@ from django.contrib import admin
 from SQLapp.views import *
 
 
-
+# Fairly standard url requests
 
 urlpatterns = [
     path('', admin.site.urls),

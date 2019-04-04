@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'SQLapp'
 ]
 
+
+# added to handle google API in our models
 GOOGLE_API_KEY = 'AIzaSyCgA_IRJrmSgGhEub0AjyArKHjna2Df2Bo'
 
 MIDDLEWARE = [
