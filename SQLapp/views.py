@@ -9,6 +9,15 @@ from SQLapp.models import *
 
 # Create your views here.
 
+class index(View):
+    def default(request):
+        response = '''
+                <h1>Welcome to our page!</h1>
+                <p>Check out information.txt for help navigating</p>
+                <p style = "font-style: italic">-Katherine and Eric</p>
+                '''
+        return HttpResponse(response)
+
 class userInfo(View):
 
     # handles only GET requests

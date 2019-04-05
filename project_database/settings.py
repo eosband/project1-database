@@ -57,10 +57,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'project_database.urls'
 
 
-# fix heroku login error - from https://stackoverflow.com/questions/8844536/admin-page-on-django-is-broken
-AUTHENTICATION_BACKENDS = (
-    ('django.contrib.auth.backends.ModelBackend'),
-)
 
 TEMPLATES = [
     {

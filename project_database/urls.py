@@ -20,7 +20,7 @@ from SQLapp.views import *
 # Fairly standard url requests
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('', index.default),
     path('admin/', admin.site.urls),
     path('<str:user_id>/poi', userInfo.aoi, name='poi'),
     path('users/', userInfo.users, name = "users"),
