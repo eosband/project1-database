@@ -10,6 +10,7 @@ from SQLapp.models import *
 # Create your views here.
 
 class index(View):
+    # a default webpage to help you navigate
     def default(request):
         response = '''
                 <h1>Welcome to our page!</h1>
@@ -19,9 +20,10 @@ class index(View):
         # including text file from https://stackoverflow.com/questions/30768056/importing-external-txt-file-in-python
         f = open('information.txt', 'r')
         content = f.read()
-        response += '''<p>–––––––––––––––––––––\n
+        response += '''<p>–––––––––––––––––––––<br>
                     Information.txt:</p>'''
         response += "<p>" + str(content) + "</p>"
+        response += '<p style = "font-style:italic">(Sorry for the bad formatting)</p>'
         return HttpResponse(response)
 
 class userInfo(View):
