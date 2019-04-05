@@ -1,0 +1,22 @@
+POST users/ creates a new user.
+When you POST you must enter a "display_name", a "username", and the "latitude" and
+"longitude" of the user's home base.
+The user id will be automatically generated.
+GET users/ returns the list of all users with their display_name, username, and user_id.
+GET users/<user_id> returns that user's display_name, username, and user_id.
+PATCH users/<user_id> allows you to change the user's display_name, username,
+and the latitude and longitude of their home base.
+DELETE users/<user_id> deletes the user linked with user_id.
+
+POST locations/ creates a new location
+When you POST you must enter a "user_id", a "place_title", the "address", the "city",
+the "state", and the "zip_code".
+Latitude and longitude of the place of interest will be automatically generated.
+GET locations/ returns the list of all locations with their user_id, place_title, address, city,
+state, zip_code, latitude, and longitude.
+GET locations/<user_id> returns the list of poi's associated with that user_id with their
+latitude and longitude.
+PATCH locations/<place_title> allows you to change the locations's place_title, address, city,
+state, and zip_code.
+DELETE locations/<place_title> deletes the location linked with place_title.
+DELETE locations/<user_id> deletes the locations linked with user_id.

@@ -6,6 +6,7 @@ from django.http import HttpResponse, JsonResponse, QueryDict
 from django.urls import include, path
 from rest_framework import routers
 from SQLapp.models import *
+import information.txt
 
 # Create your views here.
 
@@ -56,8 +57,7 @@ class userInfo(View):
         elif request.method == "POST":
             # QueryDict from https://docs.djangoproject.com/en/2.2/topics/db/queries/
             data = QueryDict(request.META["QUERY_STRING"]).dict()
-            User.objects.create(id=data["id"],
-                                display_name=data["display_name"],
+            User.objects.create(display_name=data["display_name"],
                                 username=data["username"],
                                 longitude=data["longitude"],
                                 latitude=data["latitude"])
