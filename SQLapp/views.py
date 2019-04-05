@@ -23,7 +23,6 @@ class index(View):
         response += '''<p>–––––––––––––––––––––<br>
                     Information.txt:</p>'''
         response += "<p>" + str(content) + "</p>"
-        response += '<p style = "font-style:italic">(Sorry for the bad formatting)</p>'
         return HttpResponse(response)
 
 class userInfo(View):
