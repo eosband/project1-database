@@ -6,7 +6,6 @@ from django.http import HttpResponse, JsonResponse, QueryDict
 from django.urls import include, path
 from rest_framework import routers
 from SQLapp.models import *
-from ... import information.txt
 
 # Create your views here.
 
@@ -18,7 +17,7 @@ class index(View):
                 <p style = "font-style: italic">-Katherine and Eric</p>
                 '''
         # including text file from https://stackoverflow.com/questions/30768056/importing-external-txt-file-in-python
-        f = open('words.txt', 'r')
+        f = open('information.txt', 'r')
         content = f.read()
         response += '''<p>–––––––––––––––––––––\n
                     Information.txt:</p>'''
