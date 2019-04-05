@@ -14,28 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.http import HttpResponse, JsonResponse
-from django.views import View
-from django.urls import include, path
-from rest_framework import routers
-from SQLapp import views
-from SQLapp.models import *
+from SQLapp.views import *
 
 
-class userInfo(View):
-
-    def aoi(request, usrname):
-        data = {}
-        personal_id = User.objects.get(username=usrname).id
-        for location in Location.objects.filter(userID=personal_id):
-            data[location.place_title] = (float(location.latitude), float(location.longitude))
-        return JsonResponse(data)
-        # temp = User.objects.get(username=usrname).display_name
-        # return HttpResponse(temp)
-
+# Fairly standard url requests
 
 urlpatterns = [
     path('', admin.site.urls),
     path('admin/', admin.site.urls),
-    path('<str:usrname>/poi', userInfo.aoi, name='poi')
+    path('<str:user_id>/poi', userInfo.aoi, name='poi'),
+    path('users/', userInfo.users, name = "users"),
+    path('users/<int:user_id>', userInfo.modifyUser, name="modifyUser"),
+    path('locations/',userInfo.locations, name = "locations"),
+    path('locations/<int:user_id>/<str:placeTitle>', userInfo.modifyLocation, name = "modifyLocation")
 ]
