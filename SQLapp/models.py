@@ -3,7 +3,7 @@ from django.conf import settings
 from decimal import Decimal
 import urllib
 import json
-
+# helpful link: https://www.digitalocean.com/community/tutorials/how-to-create-django-models
 # The User model. The user_id is automatically generated
 class User(models.Model):
     display_name = models.CharField(max_length=30)
