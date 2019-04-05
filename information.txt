@@ -1,22 +1,23 @@
-The base url is: https://osband-duan-project1-database.herokuapp.com/
-Make sure you have a slash after every url for patch and post requests.
-POST users/ creates a new user.
-When you POST you must enter a "display_name", a "username", and the "latitude" (float) and
-"longitude" (float) of the user's home base is optional and recommended.
-GET users/ returns the list of all users with their display_name, username, and user_id.
-PATCH users/<user_id>/ allows you to change the user's display_name, username,
-and the latitude and longitude of their home base.
-DELETE users/<user_id>/ deletes the user linked with user_id.
-
-POST locations/ creates a new location
-When you POST you must enter an "id" (integer), a "place_title", the "address", the "city",
-the "state", and the "zip_code" (integer).
-Latitude and longitude of the place of interest will be automatically generated.
-GET locations/ returns the list of each user and id corresponding to a dictionary of
-all locations associated with that user_id. For each location it lists the place_title, latitude, and longitude.
-The home base is automatically added as one of the user's pois.
-GET <user_id>/poi/ returns the list of poi's associated with that user_id with their
-place_title, latitude and longitude.
-PATCH locations/<user_id>/<placeTitle>/ allows you to change the locations's place_title, address, city,
-state, and zip_code.
-DELETE locations/<user_id>/<placeTitle>/ deletes the locations linked with user_id.
+\n The base url is: https://osband-duan-project1-database.herokuapp.com/
+\n
+\n Make sure you have a slash after every url for patch and post requests.
+\n POST users/ creates a new user.
+\n When you POST you must enter a "display_name", a "username", and the "latitude" (float) and
+\n "longitude" (float) of the user's home base is optional and recommended.
+\n GET users/ returns the list of all users with their display_name, username, and user_id.
+\n PATCH users/<user_id>/ allows you to change the user's display_name, username,
+\n and the latitude and longitude of their home base.
+\n DELETE users/<user_id>/ deletes the user linked with user_id.
+\n
+\n POST locations/ creates a new location
+\n When you POST you must enter an "id" (integer), a "place_title", the "address", the "city",
+\n the "state", and the "zip_code" (integer).
+\n Latitude and longitude of the place of interest will be automatically generated.
+\n GET locations/ returns the list of each user and id corresponding to a dictionary of
+\n all locations associated with that user_id. For each location it lists the place_title, latitude, and longitude.
+\n The home base is automatically added as one of the user's pois.
+\n GET <user_id>/poi/ returns the list of poi's associated with that user_id with their
+\n place_title, latitude and longitude.
+\n PATCH locations/<user_id>/<placeTitle>/ allows you to change the locations's place_title, address, city,
+\n state, and zip_code.
+\n DELETE locations/<user_id>/<placeTitle>/ deletes the locations linked with user_id.
