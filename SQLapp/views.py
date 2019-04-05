@@ -6,7 +6,7 @@ from django.http import HttpResponse, JsonResponse, QueryDict
 from django.urls import include, path
 from rest_framework import routers
 from SQLapp.models import *
-import information.txt
+# import information.txt
 
 # Create your views here.
 
